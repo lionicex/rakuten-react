@@ -1,0 +1,18 @@
+header {
+    background-color: #000000;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin: 0 20px;
+    display: inline-block;
+    width: 122px;
+    height: 27px;
+    background-image: url(https://prod0-kraken-cloudfront.rakuten.tv/images/logos/rktv-grey-eae681a197.svg);
+    background-size: cover;
+    font-size: 25px;
+    color: #ffffff;
+}

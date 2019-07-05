@@ -1,0 +1,226 @@
+
+.footer__info__title {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+}
+
+.footer__info__block__title, .footer__info__title {
+    font-family: Rakuten-Bold, Arial, sans-serif;
+}
+
+.footer__info__text, .footer__info__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.footer__info {
+    display: block;
+    padding: 25px;
+    text-align: center;
+    background-color: #212121;
+}
+
+.footer__info__text {
+    margin: 10px auto 20px;
+    width: 50%;
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
+    line-height: 160%;
+}
+
+.footer__info__text, .footer__info__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.footer__info__block--howitworks {
+    background-image: url(https://prod2-kraken-cloudfront.rakuten.tv/images/footer/howitworks-555729f452.svg);
+}
+
+.footer__info__block {
+    display: inline-block;
+    padding: 90px 15px 25px;
+    width: 30%;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 180px 90px;
+}
+
+.footer__info__block__title {
+    color: #fff;
+    font-size: 22px;
+}
+
+
+.footer__info__block__text, .footer__info__block__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: block;
+    text-align: center;
+}
+
+.footer__info__block__title, .footer__info__title {
+    font-family: Rakuten-Bold, Arial, sans-serif;
+}
+
+.footer__info__block__text {
+    margin-top: 10px;
+    color: #ccc;
+    font-family: Roboto-Regular, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+
+.footer__info__block__text, .footer__info__block__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: block;
+    text-align: center;
+}
+
+.footer__info__block--payments {
+    background-image: url(https://prod2-kraken-cloudfront.rakuten.tv/images/footer/payments-ec797a77da.svg);
+}
+
+.footer__info__block {
+    display: inline-block;
+    padding: 90px 15px 25px;
+    width: 30%;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 180px 90px;
+}
+
+.footer__info__block__title {
+    color: #fff;
+    font-size: 22px;
+}
+
+
+.footer__info__block__text, .footer__info__block__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: block;
+    text-align: center;
+}
+
+.footer__info__block__title, .footer__info__title {
+    font-family: Rakuten-Bold, Arial, sans-serif;
+}
+
+.footer__info__block__text {
+    margin-top: 10px;
+    color: #ccc;
+    font-family: Roboto-Regular, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+
+.footer__info__block__text, .footer__info__block__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: block;
+    text-align: center;
+}
+
+.footer__info__block--support {
+    background-image: url(https://prod1-kraken-cloudfront.rakuten.tv/images/footer/support-cd17a5040b.svg);
+}
+
+
+.footer__info__block {
+    display: inline-block;
+    padding: 90px 15px 25px;
+    width: 30%;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 180px 90px;
+}
+
+.footer__mini {
+    display: block;
+    padding: 35px 55px;
+    background-color: #0d0d0d;
+}
+
+.footer__mini__company {
+    display: block;
+    text-align: left;
+}
+
+.footer__mini__company {
+    display: block;
+    text-align: center;
+}
+
+.footer__mini__company__wrapper {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.footer__mini__company__logo {
+
+    display: inline-block;
+    width: 122px;
+    height: 27px;
+    background-image: url(https://prod0-kraken-cloudfront.rakuten.tv/images/logos/rktv-grey-eae681a197.svg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.footer__mini__company__link {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    margin-left: 15px;
+    padding: 3px 0;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: color .1s ease;
+    will-change: color;
+}
+
+.footer__mini__company__link--nondecored {
+    margin-top: 15px;
+    margin-left: 0;
+}
+
+.footer__mini__company__link--nondecored {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0;
+    color: #737373;
+    text-transform: initial;
+}
+
+.footer__mini__company__link--full {
+    width: 100%;
+}
+
+.footer__mini__company__link {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    margin-left: 15px;
+    padding: 3px 0;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: color .1s ease;
+    will-change: color;
+}
