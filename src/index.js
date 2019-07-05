@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from "./views/Home.js";
 
 ReactDOM.render(
-    <h1>Bienvenido a Rakuten</h1>,
+    <Home/>,
     document.getElementById('App')
 );
