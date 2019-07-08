@@ -7,23 +7,35 @@ export class PopularesEnTaquilla extends Component {
         this.state = {
             peliculas: []
         };
-
     }
-
     componentDidMount() {
-        const response = fetch(`https://gizmo.rakuten.tv/v3/lists/estrenos-imprescindibles-en-taquilla?classification_id=5&device_identifier=web&locale=es&market_code=es`, {
-            mode: 'no-cors'
-        }).then((response) => {
-            console.log(response.text());
-            return response.text();
-        });
-        console.log(response);
+        const url = 'https://gizmo.rakuten.tv/v3/lists/populares-en-taquilla?classification_id=5&device_identifier=web&locale=es&market_code=es';
+        const response = fetch(url, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then((response) => response.text())
+            .then((text) => JSON.parse(text))
+            .then((json) => {
+                this.setState({
+                    peliculas: json.data.contents.data
+                });
+                console.log(this.state.peliculas);
+            });
     }
 
     render() {
         const image = [];
+        this.state.peliculas.map((film) => {
+          console.log(film.images.artwork);
+            image.push(
+                <img id={film.numerical_id} src={film.images.artwork} alt="" className="img-thumbnail" width={250}/>
+            );
+        });
+
+
         image.push(
-            <img crossOrigin="Anonymous" src="" alt="" className="img-thumbnail" width={250}/>
+            <img src="" alt="" className="img-thumbnail" width={250}/>
         );
         return (
             <div className="section-list">
