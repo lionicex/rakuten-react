@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: ['babel-polyfill', './src/index.js'],
@@ -19,17 +20,21 @@ module.exports = {
             }
         ]
     },
+    mode: 'production',
     resolve: {
         extensions: ['*', '.js']
     },
     output: {
-        publicPath: path.resolve(__dirname, 'build/'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'build.js'
     },
     devServer: {
         contentBase: path.join(__dirname, 'public'),
+        host: "localhost.rakuten.tv",
         port: 8080,
-        publicPath: 'http://localhost:8080/build'
+        publicPath: 'http://localhost.rakuten.tv:8080/build'
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin({
+        template: 'public/index.html'
+    })]
 };
