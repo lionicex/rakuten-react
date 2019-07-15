@@ -1,3 +1,7 @@
+#container-genre div img{
+    clip-path: circle(42% at 50% 50%);
+}
+
 .limit {
     max-width: 100px;
     text-align: center;
@@ -6,4 +10,19 @@
 
 .limit p {
     margin-top: 5px;
+}
+#container-genre {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: -webkit-inline-box;
+    margin: 0;
+}
+
+#container-genre div img {
+    height: 100%;
+    content: '';
+    border-radius: 6px;
+}
+div#container-genre::-webkit-scrollbar {
+    display: none;
 }

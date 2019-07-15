@@ -4,17 +4,24 @@
     padding: 0;
 }
 
-.col-sm {
-    padding: 0;
-
-}
-
 .img-thumbnail {
+    border: none;
+    background-color: transparent;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-    border-radius: 6px;
+    padding: .25rem;
+    border-radius: .25rem;
+    max-width: 100%;
 }
 
-.row {
-    margin: 20px;
+.grid-container {
+    display: grid;
+    grid-row-gap: 50px;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: transparent;
+    width: 100%;
 }

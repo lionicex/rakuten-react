@@ -11,6 +11,7 @@ export class PopularesEnTaquilla extends Component {
             peliculas: []
         };
     }
+
     componentDidMount() {
 
         console.log(this.state.url);
@@ -31,18 +32,24 @@ export class PopularesEnTaquilla extends Component {
     render() {
         const image = [];
         this.state.peliculas.map((film) => {
-          console.log(film.images.artwork);
+            console.log(film.images.artwork);
             image.push(
-                <img key={film.numerical_id} src={film.images.artwork} alt="" className="img-thumbnail" width={250}/>
+
+                    <img key={film.numerical_id} src={film.images.artwork} alt="" className="img-thumbnail"/>
+
             );
         });
 
         return (
 
             <div className="section-list">
-                <h4>{this.props.title}</h4>
+                <h2>{this.props.title}</h2>
+
                 <div className="container-list">
+
                     <div id='contenedor' className="img-size">
+                        <a className="prev">&#10094;</a>
+                        <a className="next">&#10095;</a>
                         {image}
                     </div>
                 </div>
