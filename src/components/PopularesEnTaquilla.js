@@ -48,8 +48,6 @@ export class PopularesEnTaquilla extends Component {
                 <div className="container-list">
 
                     <div id='contenedor' className="img-size">
-                        <a className="prev">&#10094;</a>
-                        <a className="next">&#10095;</a>
                         {image}
                     </div>
                 </div>

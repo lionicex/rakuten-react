@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Slider from '../components/Slider';
 
-export class SliderContainer extends React.Component {
+export class SliderContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -11,20 +11,10 @@ export class SliderContainer extends React.Component {
         this.state = {
             currentSlide: 0
         };
-        this.images = [
-            "https://images-3.wuaki.tv/system/images/46/original/register-slider-generic-1562229457-width1920-quality80.jpeg",
-            "https://images-0.wuaki.tv/system/images/1868/original/sp-slider-capitana-marvel-1561559790-width1920-quality80.jpeg",
-            "https://images-2.wuaki.tv/system/images/1849/original/sp-slider-taxi-a-gibraltar-1562312188-width1920-quality80.jpeg"
-        ];
-
     }
 
-    componentDidMount() {
 
-        this.changeImage()
-    }
-
-    changeImage(){
+    changeImage() {
         if (this.state.currentSlide !== this.images.length - 1) {
             this.setState({
                 currentSlide: this.state.currentSlide + 1
@@ -34,15 +24,11 @@ export class SliderContainer extends React.Component {
                 currentSlide: 0
             })
         }
-
-            setInterval(this.changeImage, 3000);
-
-
     }
 
     arrowClick(element) {
         if (element === 1) {
-            if (this.state.currentSlide !== this.images.length - 1) {
+            if (this.state.currentSlide !== this.image.length - 1) {
                 this.setState({
                     currentSlide: this.state.currentSlide + 1
                 })
@@ -59,7 +45,7 @@ export class SliderContainer extends React.Component {
                 })
             } else {
                 this.setState({
-                    currentSlide: this.images.length - 1
+                    currentSlide: this.image.length - 1
                 })
             }
         }
@@ -76,11 +62,13 @@ export class SliderContainer extends React.Component {
     }
 
     render() {
+
         return (
             <Slider updateCurrentSlide={this.updateCurrentSlide} currentSlide={this.state.currentSlide}
-                    images={this.images} arrowClick={this.arrowClick}/>
+                    arrowClick={this.arrowClick}/>
         )
     }
 }
 
+export default SliderContainer;
 

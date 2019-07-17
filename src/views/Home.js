@@ -1,20 +1,24 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {SliderContainer} from "../containers/SliderContainer";
 import {PopularesEnTaquillaContainer} from "../containers/PopularesEnTaquillaContainer";
-import {InitialListContainer} from "../containers/InitialListContainer";
+import {BannerContainer} from "../containers/BannerContainer";
 import {GenreContainer} from "../containers/GenreContainer";
+import {SliderContainer} from "../containers/SliderContainer";
+//Redux
+import {Provider} from 'react-redux';
+import store from '../store/store';
+
 
 const Home = () => (
-    <Fragment>
+    <Provider store={store}>
         <Header/>
         <SliderContainer/>
-        <InitialListContainer/>
+        <BannerContainer/>
         <PopularesEnTaquillaContainer/>
         <GenreContainer/>
         <Footer/>
-    </Fragment>
+    </Provider>
 
 );
 

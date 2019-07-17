@@ -1,22 +1,23 @@
 import React from 'react';
-import '../css/initialList.css';
+import '../css/banner.css';
+import {connect} from "react-redux";
 
-export const InitialList = ({images}) => {
-    const list = [];
-    images.map((image) => {
-        list.push(
-            <a href="#">
-                <img src={image} alt="" className="img-thumbnail grid-item"/>
-            </a>
-        )
-    });
+export const Banner = ({images}) => {
 
     return (
         <div className="grid-container">
-            {list}
+            {Object.keys(images).map(index => (
+                <a key={index} href="#">
+                    <img src={images[index]} alt="" className="img-thumbnail grid-item"/>
+                </a>
+            ))}
         </div>
     )
 
 };
 
-export default InitialList;
+const mapStateToProps = state => ({
+    images: state.bannerImages.images
+});
+export default connect(mapStateToProps)(Banner);
+

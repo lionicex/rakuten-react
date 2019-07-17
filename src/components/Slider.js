@@ -1,21 +1,8 @@
 import React from 'react';
 import '../css/slider.css';
+import {connect} from "react-redux";
 
-export const Slider = ({currentSlide, updateCurrentSlide, images, arrowClick}) => {
-    console.log(currentSlide);
-    const dots = [];
-
-    console.log(images[currentSlide]);
-
-    for (let i = 0; i < images.length; i++) {
-        dots.push(
-            <span key={i} className={`dot ${currentSlide !== i ? 'active' : ''}`}
-                  onClick={() => updateCurrentSlide(i)}>
-
-            </span>
-        )
-
-    }
+const Slider = ({currentSlide, updateCurrentSlide, images, arrowClick}) => {
 
     return (
         <div id="slide">
@@ -23,21 +10,23 @@ export const Slider = ({currentSlide, updateCurrentSlide, images, arrowClick}) =
                 <div className="mySlides fade">
                     <img
                         src={images[currentSlide]}
-                        alt="película taquillera"/>
+                        alt=""/>
                     <div className="dots-group">
-                        {dots}
+                        {Object.keys(images).map(index => (
+                            <span key={index} className={`dot ${currentSlide !== index ? 'active' : ''}`}
+                                  onClick={() => updateCurrentSlide(index)}>
+                            </span>
+                        ))}
                     </div>
                 </div>
-
-                <a className="prev" onClick={() => arrowClick(-1)}>&#10094;</a>
-                <a className="next" onClick={() => arrowClick(1)}>&#10095;</a>
+                <a className="prev">&#10094;</a>
+                <a className="next">&#10095;</a>
             </div>
-
-
         </div>
     )
-
-
 };
 
-export default Slider;
+const mapStateToProps = state => ({
+    images: state.sliderImages.images
+});
+export default connect(mapStateToProps)(Slider);
