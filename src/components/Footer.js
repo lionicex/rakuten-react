@@ -2,21 +2,31 @@ import React from 'react';
 import '../css/footer.css';
 
 const Footer = () => (
+
     <div className="footer">
-        <div className="footer__info"><h1 className="footer__info__title">Rakuten TV - Tu cine en casa</h1>
-            <p className="footer__info__text">Disfruta de los últimos estrenos en tu SMART TV y muchos otros
+        <div className="footer__info">
+            <h1 className="footer__info__title">Rakuten TV - Tu cine en casa</h1>
+            <p className="footer__info__text">
+                Disfruta de los últimos estrenos en tu SMART TV y muchos otros
                 dispositivos en tan
                 sólo unos clics. Los mejores blockbusters, clásicos premiados y series al instante. Sin contratos ni
-                compromisos. Pruébalo ahora y gana Rakuten Súper Puntos con cada compra que realices.</p><a
-                className="footer__info__block footer__info__block--howitworks" href="https://ayuda.rakuten.tv"
-                target="_blank"><span className="footer__info__block__title">Cómo funciona</span><span
-                className="footer__info__block__text">Rakuten TV es compatible con la gran mayoría de dispositivos conectados.</span></a><a
-                className="footer__info__block footer__info__block--payments" href="https://ayuda.rakuten.tv"
-                target="_blank"><span className="footer__info__block__title">Más formas de pago</span><span
-                className="footer__info__block__text">Rakuten TV es compatible con PayPal y con tarjetas de crédito Visa y Mastercard.</span></a><a
-                className="footer__info__block footer__info__block--support" href="https://ayuda.rakuten.tv"
-                target="_blank"><span className="footer__info__block__title">Ayuda y soporte</span><span
-                className="footer__info__block__text">¿Tienes problemas con nuestro servicio? Ponte en contacto con nuestro equipo de soporte</span></a>
+                compromisos. Pruébalo ahora y gana Rakuten Súper Puntos con cada compra que realices.
+            </p>
+            <a className="footer__info__block footer__info__block--howitworks" href="https://ayuda.rakuten.tv"
+               target="_blank">
+                <span className="footer__info__block__title">Cómo funciona</span>
+                <span className="footer__info__block__text">Rakuten TV es compatible con la gran mayoría de dispositivos conectados.</span>
+            </a>
+            <a className="footer__info__block footer__info__block--payments" href="https://ayuda.rakuten.tv"
+               target="_blank">
+                <span className="footer__info__block__title">Más formas de pago</span>
+                <span className="footer__info__block__text">Rakuten TV es compatible con PayPal y con tarjetas de crédito Visa y Mastercard.</span>
+            </a>
+            <a className="footer__info__block footer__info__block--support" href="https://ayuda.rakuten.tv"
+               target="_blank">
+                <span className="footer__info__block__title">Ayuda y soporte</span>
+                <span className="footer__info__block__text">¿Tienes problemas con nuestro servicio? Ponte en contacto con nuestro equipo de soporte</span>
+            </a>
         </div>
         <div className="footer__mini">
             <div className="footer__mini__company">
@@ -44,6 +54,6 @@ const Footer = () => (
         </div>
     </div>
 
-);
+)
 
 export default Footer;
