@@ -1,25 +1,41 @@
-import React from 'react';
-import PopularesEnTaquilla from '../components/PopularesEnTaquilla';
+import React, {Component, Fragment} from 'react';
+import Movies from '../components/Movies';
+import {connect} from "react-redux";
+import {getTitles, showFilms} from "../store/actions/moviesActions";
 
-export class PopularesEnTaquillaContainer extends React.Component {
+export class MoviesContainer extends Component {
+
     constructor(props) {
         super(props);
-        this.title = this.title.bind(this);
-        this.lists = ["populares-en-taquilla", "estrenos-para-toda-la-familia", "estrenos-imprescindibles-en-taquilla", "estrenos-espanoles"];
     }
 
-    title(id) {
-        const newStr = id.replace(/\-/g, ' ');
-        return newStr.charAt(0).toUpperCase() + newStr.slice(1);
-    };
+    componentDidMount() {
+        this.props.url.map((url) => {
+            this.props.showFilms(url);
+
+        });
+
+    }
 
     render() {
+        console.log(this.props.films[0]);
         return (
-            this.lists.map((id) =>
-                <PopularesEnTaquilla key={id}
-                                     title={this.title(id)}
-                                     url={`https://gizmo.rakuten.tv/v3/lists/${id}?classification_id=5&device_identifier=web&locale=es&market_code=es`}/>
+            Object.keys(this.props.films).map(index => (
+                <Movies key={index}
+                        title={this.props.titles[index]}
+                        data={this.props.films[index]}
+                />
             ))
+        )
     }
-
 }
+
+const mapStateToProps = state => ({
+    categories: state.movies.categories,
+    titles: state.movies.titles,
+    url: state.movies.url,
+    films: state.movies.films
+});
+
+export default connect(mapStateToProps, {getTitles, showFilms})(MoviesContainer);
+

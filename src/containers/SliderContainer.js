@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 import Slider from '../components/Slider';
+import {connect} from "react-redux";
+import {nextPrevButton, showSliderImages, updateCurrentSlide} from "../store/actions/sliderActions";
 
 export class SliderContainer extends Component {
 
     constructor(props) {
         super(props);
-        this.updateCurrentSlide = this.updateCurrentSlide.bind(this);
-        this.arrowClick = this.arrowClick.bind(this);
         this.changeImage = this.changeImage.bind(this);
-        this.state = {
-            currentSlide: 0
-        };
     }
-
+    componentDidMount() {
+        showSliderImages();
+    }
 
     changeImage() {
         if (this.state.currentSlide !== this.images.length - 1) {
@@ -25,50 +24,22 @@ export class SliderContainer extends Component {
             })
         }
     }
-
-    arrowClick(element) {
-        if (element === 1) {
-            if (this.state.currentSlide !== this.image.length - 1) {
-                this.setState({
-                    currentSlide: this.state.currentSlide + 1
-                })
-            } else {
-                this.setState({
-                    currentSlide: 0
-                })
-            }
-        }
-        if (element === -1) {
-            if (this.state.currentSlide !== 0) {
-                this.setState({
-                    currentSlide: this.state.currentSlide - 1
-                })
-            } else {
-                this.setState({
-                    currentSlide: this.image.length - 1
-                })
-            }
-        }
-
-    }
-
-    updateCurrentSlide(index) {
-        if (index !== this.state.currentSlide) {
-            this.setState({
-                currentSlide: index
-            });
-        }
-
-    }
-
     render() {
-
         return (
-            <Slider updateCurrentSlide={this.updateCurrentSlide} currentSlide={this.state.currentSlide}
-                    arrowClick={this.arrowClick}/>
+            <Slider images={this.props.images}
+                    currentSlide={this.props.currentSlide}
+                    updateCurrentSlide={this.props.updateCurrentSlide}
+                    nextPrevButton={this.props.nextPrevButton}/>
         )
     }
 }
+const mapStateToProps = state => ({
+    images: state.sliderImages.images,
+    currentSlide: state.sliderImages.currentSlide,
+    updateCurrentSlide: updateCurrentSlide(),
+    nextPrevButton: nextPrevButton(),
+    showSliderImages: showSliderImages()
+});
 
-export default SliderContainer;
+export default connect(mapStateToProps, {showSliderImages, updateCurrentSlide, nextPrevButton})(SliderContainer);
 

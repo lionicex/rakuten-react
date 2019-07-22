@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/slider.css';
-import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
-const Slider = ({currentSlide, updateCurrentSlide, images, arrowClick}) => {
 
+const Slider = ({currentSlide, updateCurrentSlide, images, nextPrevButton}) => {
     return (
         <div id="slide">
             <div className="slideshow-container">
@@ -19,14 +19,17 @@ const Slider = ({currentSlide, updateCurrentSlide, images, arrowClick}) => {
                         ))}
                     </div>
                 </div>
-                <a className="prev">&#10094;</a>
-                <a className="next">&#10095;</a>
+                <a className="prev" onClick={() => nextPrevButton("-1")}>&#10094;</a>
+                <a className="next" onClick={() => nextPrevButton("1")}>&#10095;</a>
             </div>
         </div>
     )
 };
+Slider.propTypes = {
+    images: PropTypes.array.isRequired,
+    currentSlide: PropTypes.number,
+    updateCurrentSlide: PropTypes.func.isRequired,
+    nextPrevButton: PropTypes.func.isRequired
 
-const mapStateToProps = state => ({
-    images: state.sliderImages.images
-});
-export default connect(mapStateToProps)(Slider);
+};
+export default Slider;
