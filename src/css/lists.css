@@ -11,7 +11,7 @@
     margin: 20px;
 }
 
-#contenedor {
+#container {
     overflow-x: scroll;
     overflow-y: hidden;
     display: flex;
@@ -30,9 +30,8 @@
     width: 100%;
 }
 
-#contenedor img {
+#container img {
     height: 100%;
-    content: '';
     border-radius: 6px;
 }
 
@@ -41,7 +40,7 @@
 
 }
 
-div#contenedor::-webkit-scrollbar {
+div#container::-webkit-scrollbar {
     display: none;
 }
 

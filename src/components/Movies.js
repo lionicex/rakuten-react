@@ -9,7 +9,7 @@ const Movies = ({data, title}) => {
         <div className="section-list">
             <h2>{title}</h2>
             <div className="container-list">
-                <div id='contenedor' className="img-size">
+                <div id='container' className="img-size">
                     {data.map(film => (
                         <img key={film.numerical_id} src={film.images.artwork} alt=""
                              className="img-thumbnail"/>

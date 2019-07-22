@@ -20,7 +20,6 @@
 
 #container-genre div img {
     height: 100%;
-    content: '';
     border-radius: 6px;
 }
 div#container-genre::-webkit-scrollbar {
