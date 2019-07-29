@@ -1,4 +1,77 @@
-#container-genre div img{
+
+.container-section {
+    margin: 10px 0 20px 0;
+}
+
+.title-bar {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.arrow-button {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.genre-back-bg {
+    position: absolute;
+    left: 0;
+    height: 175px;
+    width: 80px;
+    background: linear-gradient(to right, rgba(23, 23, 23, .95) 0, transparent 100%);
+    z-index: 99;
+}
+
+.genre-forward-bg {
+    position: absolute;
+    right: 0;
+    height: 175px;
+    width: 80px;
+    background: linear-gradient(to left, rgba(23, 23, 23, .95) 0, transparent 100%);
+    z-index: 99;
+}
+
+.genre-back {
+    color: white;
+    align-self: center;
+    position: absolute;
+    left: 0;
+    font-size: 40px;
+    z-index: 100;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.genre-forward {
+    color: white;
+    align-self: center;
+    position: absolute;
+    right: 0;
+    font-size: 40px;
+    z-index: 100;
+    padding-right: 20px;
+    cursor: pointer;
+
+}
+
+.container-img {
+    display: flex;
+    overflow-x: scroll;
+    padding: 0 5px;
+
+}
+
+.container-img::-webkit-scrollbar {
+    display: none;
+}
+
+
+.clip {
     clip-path: circle(42% at 50% 50%);
 }
 
@@ -10,18 +83,4 @@
 
 .limit p {
     margin-top: 5px;
-}
-#container-genre {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: -webkit-inline-box;
-    margin: 0;
-}
-
-#container-genre div img {
-    height: 100%;
-    border-radius: 6px;
-}
-div#container-genre::-webkit-scrollbar {
-    display: none;
 }
