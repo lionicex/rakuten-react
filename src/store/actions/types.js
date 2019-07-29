@@ -7,4 +7,6 @@ export const CREATE_URL = 'CREATE_URL';
 export const SHOW_MOVIES_TITLES = 'SHOW_MOVIES_TITLES';
 export const SHOW_MOVIES_CATEGORIES = 'SHOW_MOVIES_CATEGORIES';
 export const SHOW_FILMS = 'SHOW_FILMS';
+export const CLICK_LEFT = "CLICK_LEFT";
+export const CLICK_RIGHT = "CLICK_RIGHT";
 

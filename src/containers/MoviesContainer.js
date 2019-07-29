@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import Movies from '../components/Movies';
 import {connect} from "react-redux";
-import {getTitles, showFilms} from "../store/actions/moviesActions";
+import {clickRight, getTitles, showFilms} from "../store/actions/moviesActions";
 
 export class MoviesContainer extends Component {
 
@@ -22,6 +22,8 @@ export class MoviesContainer extends Component {
         return (
             Object.keys(this.props.films).map(index => (
                 <Movies key={index}
+                        clickRight={this.props.clickRight}
+                        id={this.props.titles[index].toLowerCase().replace(/\s/g, '')}
                         title={this.props.titles[index]}
                         data={this.props.films[index]}
                 />
@@ -37,5 +39,5 @@ const mapStateToProps = state => ({
     films: state.movies.films
 });
 
-export default connect(mapStateToProps, {getTitles, showFilms})(MoviesContainer);
+export default connect(mapStateToProps, {getTitles, showFilms, clickRight})(MoviesContainer);
 

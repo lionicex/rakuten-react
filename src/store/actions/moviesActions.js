@@ -1,4 +1,4 @@
-import {SHOW_MOVIES_CATEGORIES, SHOW_MOVIES_TITLES, SHOW_FILMS, CREATE_URL} from "./types";
+import {SHOW_MOVIES_CATEGORIES, SHOW_MOVIES_TITLES, SHOW_FILMS, CREATE_URL, CLICK_LEFT, CLICK_RIGHT} from "./types";
 import axios from 'axios';
 
 export const createUrl = (categories) => dispatch => {
@@ -35,5 +35,19 @@ export const showFilms = (url) => async dispatch => {
         payload: response.data.data.contents.data
     })
 
+
+};
+export const clickRight = (id) => dispatch => {
+    console.log("HOLA", id);
+    const clientWidth = document.documentElement.clientWidth;
+    const container = document.getElementById(id);
+    const childWidth = container.children.item(0).offsetWidth;
+    const childPaddingLeft = window.getComputedStyle(container.children.item(0)).getPropertyValue('padding-left');
+    const childsInView = Math.round(clientWidth / (childWidth + childPaddingLeft * 2));
+    const nextItem = container.children.item(childsInView);
+    container.scrollLeft = nextItem.offsetLeft - childPaddingLeft;
+    dispatch({
+        type: CLICK_RIGHT
+    })
 
 };

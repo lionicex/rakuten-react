@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/lists.css';
 import PropTypes from "prop-types";
 
-const Movies = ({data, title}) => {
+const Movies = ({data, title, id, clickRight}) => {
 
     return (
         <div className="container-section">
@@ -14,7 +14,7 @@ const Movies = ({data, title}) => {
             <div className="container-movies">
 
 
-                <div className="container-img">
+                <div id={id} className="container-img">
 
                     {data.map(film => (
                         <div className="image">
@@ -34,10 +34,10 @@ const Movies = ({data, title}) => {
                             </div>
                         </div>
                     ))}
-                    <div className="back-bg"></div>
+                    <div className="back-bg" onClick={() => clickLeft()}></div>
                     <div className="forward-bg"></div>
                     <a className="back">&#10094;</a>
-                    <a className="forward">&#10095;</a>
+                    <a className="forward" onClick={() => clickRight(id)}>&#10095;</a>
 
                 </div>
             </div>
@@ -49,7 +49,9 @@ const Movies = ({data, title}) => {
 
 Movies.propTypes = {
     title: PropTypes.string.isRequired,
-    data: PropTypes.array.isRequired
+    data: PropTypes.array.isRequired,
+    id: PropTypes.string.isRequired,
+    clickRight: PropTypes.func.isRequired
 
 };
 
