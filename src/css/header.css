@@ -1,18 +1,152 @@
 header {
-    background-color: #000000;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .8) 0, rgba(0, 0, 0, .7) 20%, rgba(0, 0, 0, .4) 50%, transparent 100%);
     color: white;
+    top: 0;
+    left: 0;
+    max-width: 1600px;
     height: 60px;
+    flex-wrap: nowrap;
     display: flex;
     align-items: center;
 }
 
 .logo {
+    order: 1;
+    position: relative;
     margin: 0 20px;
-    display: inline-block;
+    display: flex;
     width: 122px;
     height: 27px;
     background-image: url(https://prod0-kraken-cloudfront.rakuten.tv/images/logos/rktv-grey-eae681a197.svg);
     background-size: cover;
     font-size: 25px;
     color: #ffffff;
+}
+
+.menu {
+    display: none;
+}
+
+#search-bar {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    order: 3;
+    justify-content: center;
+    padding: 4px 4px 4px 10px;
+    font-size: 25px;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 3px;
+    color: #cccccc;
+    margin: 0 15px;
+
+}
+
+#search-bar input {
+    padding: 10px;
+    color: white;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-radius: 2px;
+
+}
+
+#search-bar input::placeholder {
+    color: #999999;
+    font-size: 15px;
+}
+
+.register {
+    display: none;
+}
+
+
+@media (min-width: 1025px) {
+header{
+    background: #000000 ;
+}
+    .menu {
+        order: 2;
+        display: flex;
+        position: relative;
+        top: 0;
+        height: auto;
+        background-color: transparent;
+    }
+
+    ul, ol {
+        list-style: none;
+        padding: 0 10px;
+        display: flex;
+        order: 2;
+    }
+
+    .nav > li {
+        float: left;
+    }
+
+    .nav li a {
+        background-color: #000000;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 12px;
+        font-size: 14px;
+        display: block;
+    }
+
+    .nav li a:hover {
+        color: #ffe300;
+    }
+
+    .nav li ul {
+        display: none;
+        position: absolute;
+        min-width: 260px;
+    }
+
+    .nav li:hover > ul {
+        display: block;
+    }
+
+    .nav li ul li {
+        position: relative;
+    }
+
+    .nav li ul li ul {
+        right: -140px;
+        top: 0;
+    }
+
+
+    .register {
+        position: relative;
+        float: right;
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-end;
+        order: 4;
+    }
+
+    .register a {
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+        align-self: center;
+
+    }
+
+    .register button {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #ffe300;
+        color: #000000;
+        font-size: 15px;
+        margin: 10px;
+    }
 }

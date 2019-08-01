@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/lists.css';
 import PropTypes from "prop-types";
 
-const Movies = ({data, title, id, clickRight}) => {
+const Movies = ({data, title, id, clickRight, clickLeft}) => {
 
     return (
         <div className="container-section">
@@ -12,12 +12,10 @@ const Movies = ({data, title, id, clickRight}) => {
             </div>
 
             <div className="container-movies">
-
-
                 <div id={id} className="container-img">
 
                     {data.map(film => (
-                        <div className="image">
+                        <div className="image" key={film.numerical_id}>
                             <img key={film.numerical_id} src={film.images.artwork} alt=""
                                  className="img-thumbnail"/>
                             <div className="rating">
@@ -34,9 +32,9 @@ const Movies = ({data, title, id, clickRight}) => {
                             </div>
                         </div>
                     ))}
-                    <div className="back-bg" onClick={() => clickLeft()}></div>
+                    <div className="back-bg"></div>
                     <div className="forward-bg"></div>
-                    <a className="back">&#10094;</a>
+                    <a className="back" onClick={() => clickLeft(id)}>&#10094;</a>
                     <a className="forward" onClick={() => clickRight(id)}>&#10095;</a>
 
                 </div>
@@ -51,7 +49,8 @@ Movies.propTypes = {
     title: PropTypes.string.isRequired,
     data: PropTypes.array.isRequired,
     id: PropTypes.string.isRequired,
-    clickRight: PropTypes.func.isRequired
+    clickRight: PropTypes.func.isRequired,
+    clickLeft: PropTypes.func.isRequired
 
 };
 

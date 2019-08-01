@@ -1,4 +1,4 @@
-import {SHOW_MOVIES_TITLES, CREATE_URL, SHOW_MOVIES_CATEGORIES, SHOW_FILMS, CLICK_RIGHT} from "../actions/types";
+import {SHOW_MOVIES_TITLES, CREATE_URL, SHOW_MOVIES_CATEGORIES, SHOW_FILMS, CLICK_RIGHT, CLICK_LEFT} from "../actions/types";
 
 const initialState = {
 
@@ -47,6 +47,10 @@ export default function (state = initialState, action) {
                 films: [...state.films, action.payload]
             };
         case CLICK_RIGHT:
+            return {
+                ...state
+            };
+        case CLICK_LEFT:
             return {
                 ...state
             };

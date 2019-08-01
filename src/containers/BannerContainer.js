@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import Banner from "../components/Banner";
+import {connect} from "react-redux";
 
 export class BannerContainer extends Component {
 
-    constructor(props) {
-        super(props);
-
-    }
-
     render() {
         return (
-            <Banner images={this.images}/>
+            <Banner images={this.props.images}/>
         )
     }
 }
 
+const mapStateToProps = state => ({
+    images: state.bannerImages.images
+});
+export default connect(mapStateToProps)(BannerContainer);
 

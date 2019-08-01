@@ -1,10 +1,10 @@
-import {SHOW_GENRE_IMAGES} from "../actions/types";
+import {CLICK_LEFT, CLICK_RIGHT, SHOW_GENRE_IMAGES} from "../actions/types";
 
 const initialState = {
     images: [
         {
             src: "https://images-2.wuaki.tv/system/brandable_photos/6231/original/1453732413-1453732413.png",
-            name: "Acción"
+            name: "Acción",
         },
         {
             src: "https://images-2.wuaki.tv/system/brandable_photos/6349/original/1461242197-1461242197.png",
@@ -78,11 +78,21 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-    if (action.type === SHOW_GENRE_IMAGES) {
-        return {
-            ...state
-        }
-    } else {
-        return state;
+    switch (action.type) {
+
+        case SHOW_GENRE_IMAGES:
+            return {
+                ...state
+            };
+        case CLICK_LEFT:
+            return {
+                ...state
+            };
+        case CLICK_RIGHT:
+            return {
+                ...state
+            };
+        default:
+            return state;
     }
 }

@@ -18,44 +18,41 @@
     justify-content: space-between;
 }
 
-.genre-back-bg {
+.genre-back-bg, .genre-forward-bg {
     position: absolute;
-    left: 0;
     height: 175px;
     width: 80px;
-    background: linear-gradient(to right, rgba(23, 23, 23, .95) 0, transparent 100%);
     z-index: 99;
+}
+
+.genre-back-bg {
+    left: 0;
+    background: linear-gradient(to right, rgba(23, 23, 23, .95) 0, transparent 100%);
 }
 
 .genre-forward-bg {
-    position: absolute;
     right: 0;
-    height: 175px;
-    width: 80px;
     background: linear-gradient(to left, rgba(23, 23, 23, .95) 0, transparent 100%);
-    z-index: 99;
+}
+
+.genre-back, .genre-forward {
+    color: white;
+    align-self: center;
+    position: absolute;
+    font-size: 40px;
+    z-index: 100;
+    cursor: pointer;
 }
 
 .genre-back {
-    color: white;
-    align-self: center;
-    position: absolute;
     left: 0;
-    font-size: 40px;
-    z-index: 100;
     padding-left: 20px;
-    cursor: pointer;
 }
 
 .genre-forward {
-    color: white;
-    align-self: center;
-    position: absolute;
     right: 0;
-    font-size: 40px;
-    z-index: 100;
     padding-right: 20px;
-    cursor: pointer;
+
 
 }
 

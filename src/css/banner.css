@@ -10,7 +10,7 @@
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     padding: .25rem;
-    border-radius: .25rem;
+    border-radius: 6px
 }
 
 .grid-container {
