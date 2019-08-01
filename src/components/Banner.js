@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/banner.css';
-import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
 export const Banner = ({images}) => {
 
@@ -16,8 +16,9 @@ export const Banner = ({images}) => {
 
 };
 
-const mapStateToProps = state => ({
-    images: state.bannerImages.images
-});
-export default connect(mapStateToProps)(Banner);
+Banner.propTypes = {
+    images: PropTypes.array.isRequired
+
+};
+export default Banner;
 
